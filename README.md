@@ -9,7 +9,7 @@ For now, if you choose to install Proton through this script, it will install it
 ## Dependencies
 - curl
 - steam *(for logging in for use with steamcmd)*
-- steamcmd
+- steamcmd *(optional, use for downloading Proton)*
 - wine
 - winetricks *(optional, script can grab it)*
 
