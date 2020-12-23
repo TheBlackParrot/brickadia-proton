@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 PROTON_VERSIONS=("3.7" "3.16" "4.2" "4.11" "5.0")
 PROTON_APPIDS=(858280 961940 1054830 1113280 1245040)
