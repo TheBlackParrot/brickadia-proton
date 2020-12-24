@@ -176,7 +176,6 @@ function br_run {
 		echo "Running on branch ${ARGV[1]}"
 	fi
 
-	echo "$LAUNCHER_ARGS"
 	cd "$PROTON_DIR"
 	./proton run "$DIR/BrickadiaLauncher.exe" --branch $BRANCH
 	exit
