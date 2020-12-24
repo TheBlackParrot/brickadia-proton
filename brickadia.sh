@@ -177,7 +177,7 @@ function br_run {
 	fi
 
 	cd "$PROTON_DIR"
-	exec ./proton run "$DIR/BrickadiaLauncher.exe" --branch $BRANCH
+	nohup ./proton run "$DIR/BrickadiaLauncher.exe" --branch $BRANCH
 }
 
 if [ ! -f ./vars ]; then
