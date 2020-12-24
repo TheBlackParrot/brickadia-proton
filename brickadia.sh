@@ -201,5 +201,5 @@ case ${ARGV[0],,} in
 		br_vars;;
 
 	* ) 
-		echo "Commands: run/install/vars";;
+		echo "Commands: run [branch]/install/vars";;
 esac
