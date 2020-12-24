@@ -2,6 +2,7 @@
 
 PROTON_VERSIONS=("3.7" "3.16" "4.2" "4.11" "5.0")
 PROTON_APPIDS=(858280 961940 1054830 1113280 1245040)
+ARGV=("$@")
 
 function br_install {
 	mkdir -p "$BRICKADIA_DIR"
@@ -168,8 +169,16 @@ function br_run {
 		echo "Brickadia launcher not present in $DIR. Use this script again with \"install\" instead of \"run\"."
 	fi
 
+	BRANCH="${ARGV[1]}"
+	if [ -z ${ARGV[1]} ]; then
+		BRANCH="main"
+	else
+		echo "Running on branch ${ARGV[1]}"
+	fi
+
+	echo "$LAUNCHER_ARGS"
 	cd "$PROTON_DIR"
-	./proton run "$DIR/BrickadiaLauncher.exe"
+	./proton run "$DIR/BrickadiaLauncher.exe" --branch $BRANCH
 	exit
 }
 
@@ -181,7 +190,7 @@ source ./vars
 # Proton needs this
 export STEAM_COMPAT_DATA_PATH=$BRICKADIA_DIR
 
-case ${1,,} in
+case ${ARGV[0],,} in
 	r|ru|run)
 		br_run;;
 
